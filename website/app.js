@@ -55,11 +55,15 @@ const performAction = (e) => {
 
     getWeatherData(baseUrl,zipCode, apiKey)
     .then(function(data) {
-        postData('/addWeather', {temp:data.main.temp, date:newDate, feelings:feelings} );
+        postData('/addWeather', {
+            temp:data.main.temp, 
+            date:newDate, 
+            feelings:feelings
+        })
     })
-    .then(
-        updateUI()
-    )
+    .then(function() {
+        updateUI();
+    });
 };
 
 document.getElementById('generate').addEventListener('click', performAction);
