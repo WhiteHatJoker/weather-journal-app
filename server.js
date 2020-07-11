@@ -27,6 +27,8 @@ app.post('/addWeather', (req, res) => {
     projectData['temp'] = req.body.temp;
     projectData['date'] = req.body.date;
     projectData['userFeelings'] = req.body.feelings;
+    console.log(projectData);
+    res.send(projectData);
 });
 
 
